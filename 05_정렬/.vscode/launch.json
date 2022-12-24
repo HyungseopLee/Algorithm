@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/ihyeongseob/Desktop/이형섭/코딩테스트/정렬",
+      "program": "/Users/ihyeongseob/Desktop/이형섭/코딩테스트/정렬/build/Debug/outDebug"
+    }
+  ]
+}
