@@ -16,8 +16,6 @@ for i in range(1, n) :
         if arr[j] > arr[i] :
             dp_table[i] = max(dp_table[i], dp_table[j] + 1)
 
-showDP(dp_table)
-
 # 열외해야 하는 병사의 최소 수   
 print(n - max(dp_table))
 
