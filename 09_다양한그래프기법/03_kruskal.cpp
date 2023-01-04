@@ -14,10 +14,10 @@ void union_parent(int* _parent, int _v1, int _v2) {
     int v1_parent = find_parent(_parent, _v1);
     int v2_parent = find_parent(_parent, _v2);
     if(v1_parent < v2_parent) {
-        _parent[_v2] = _v1;
+        _parent[v2_parent] = v1_parent;
     }
     else {
-        _parent[_v1] = _v2;
+        _parent[v1_parent] = v2_parent;
     }
 }
 
