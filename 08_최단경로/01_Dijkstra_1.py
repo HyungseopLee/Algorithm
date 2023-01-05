@@ -27,6 +27,7 @@ def dijkstra(start):
     # 시작 노드에 대해서 초기화
     distance[start] = 0
     visited[start] = True
+    # 시작 노드와 연결된 노드들만 distance table update
     for j in graph[start]:
         distance[j[0]] = j[1]
     # 시작 노드를 제외한 전체 n - 1 노드에 대한 update 시작

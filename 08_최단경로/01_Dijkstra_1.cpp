@@ -30,6 +30,7 @@ void init_dtable(Dijkstra* _dtable){
     }
 }
 
+
 int getSmallestNode(Dijkstra* _dtable) {
     int min = INF;
     int ret = -1;
