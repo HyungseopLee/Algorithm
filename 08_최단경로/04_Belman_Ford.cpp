@@ -4,7 +4,7 @@
 
 using namespace std;
 
-typedef struct ford {
+typedef struct ford { 
     long long dist;
     int prev;
 }FORD;
@@ -22,7 +22,7 @@ void init_dtable(FORD* dtable){
 
 bool doFord(vector<pair<pair<long, long>, int>> edges ,FORD* dtable) {
 
-    dtable[startv].dist = 0;
+    dtable[startv].dist = 0; 
     
     for (int i = 1; i <= n+1; i++)
     {
