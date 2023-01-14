@@ -19,5 +19,8 @@ def solution(s):
         # 남아있는 문자열에 대해서 처리
         finalStr += str(count) + curStr if count >= 2 else curStr
         # 만들어지는 압축 문자열이 가장 짧은 것이 정답
+        print(finalStr)
         answer = min(answer, len(finalStr))
     return answer
+
+print(solution("abcabcabcabcdededededede"))
