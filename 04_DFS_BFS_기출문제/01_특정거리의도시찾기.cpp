@@ -7,6 +7,7 @@ using namespace std;
 
 int n, m, k, x;
 vector<int> graph[300001];
+// node[11] = 2 ---> 출발노드부터 11번노드까지 2만큼의 비용 소모 (개수 정렬 기법처럼 사용)
 int node[300001] = {0};
 vector<bool> visited(300001, false);
 vector<int> result;
@@ -16,7 +17,6 @@ bool BFS() {
     queue<int> q;
     q.push(x);
     visited[x] = true;
-    // x에서 x까지 0번 탐색
     node[x] = 0;
 
     while(!q.empty())
