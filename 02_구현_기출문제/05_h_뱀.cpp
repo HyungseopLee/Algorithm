@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector> 
 #include <queue>
-#include <cstdlib>
 
 using namespace std;
 
@@ -50,18 +49,16 @@ void solution(){
         }
         // 이동한 곳이 map을 벗어나거나 뱀의 머리가 자신의 몸통에 부딪힌 경우 return
         if(head_x < 1 || head_x > n || head_y < 1 || head_y > n){
-            cout << "stop1\n";
             cout << sec;
-            exit(0);
+            break;
         }
         if(map[head_x][head_y] == 1){
-            cout << "stop2\n";
             cout << sec;
-            exit(0);
+            break;
         }
         // 이동한 곳에 사과가 있다면
         if(map[head_x][head_y] == 2){
-            tail.push({head_x, head_y}); // tail queue에 담아둔다. (나중에 tail이 무조건 거쳐야 할 곳이므로)
+            tail.push(make_pair(head_x, head_y)); // tail queue에 담아둔다. (나중에 tail이 무조건 거쳐야 할 곳이므로)
         }
         // 이동한 곳에 사과가 없다면
         else {
