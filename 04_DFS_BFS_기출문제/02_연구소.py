@@ -4,23 +4,24 @@ import copy
 # 1. 0인 부분을 리스트에 담는다
 # 2. 3개 조합을 모두 만든다
 # 3. 각각의 조합에 대해서 
-# 4. 모든 바이러스(2)를 BFS/ DFS 탐색하면서 거쳐간 곳을, visited[해당][해당] = 1
-# 5. 만약 visited[][] = 1인 곳의 개수가 N*M이라면 continue(3)
-# 6. 만약 visited[][] = 1인 곳의 개수가 N*M 미만이라면 max = N*M - count;
-# 7. 가장 큰 max을 찾아 출력한다
+# 4. 모든 바이러스(2)를 DFS 탐색하면서 거쳐간 곳을, virus(2)로 전파시킨다
+# 5. 4. 과정을 마친 후 0의 개수를 반환한다.
+# 6. 반환된 0의 개수 중 최대값을 출력한다.
 
 def DFS(temp, x, y) :
     for i in range(4) :
         nx = x + dx[i]
         ny = y + dy[i]
+        # 범위 안에서
         if nx >= 0 and nx < n and ny >= 0 and ny < m :
+            # virus(2)와 0인 곳이 이어져있다면 virus(2)로 전파시킨다
             if temp[nx][ny] == 0 :
                 temp[nx][ny] = 2
                 DFS(temp, nx, ny)
             
 def virusDFS() :
     global original
-    temp = copy.deepcopy(original) # 값만 복사해온다.
+    temp = copy.deepcopy(original) # 값만 복사해준다.
     local_result = 0
     for i in range(n) :
         for j in range(m) :
@@ -29,6 +30,7 @@ def virusDFS() :
                 DFS(temp, i ,j)
     for i in range(n) :
         for j in range(m) :
+            # virus 전파가 끝나고 난 뒤 남아있는 안전구역(0) 개수를 반환
             if temp[i][j] == 0 :
                 local_result += 1
     return local_result
@@ -67,6 +69,7 @@ for i in combinations(zero_area, 3) :
     original[i[1]//10][i[1]%10] = 1
     original[i[2]//10][i[2]%10] = 1
 
+    # virus 전파 후, 남은 0의 개수의 최대값을 result에 update
     result = max(result, virusDFS())
 
     # 원래대로 되돌려 놓음 0으로..
@@ -86,5 +89,6 @@ print(result)
 0 0 0 0 0 1 1
 0 1 0 0 0 0 0
 0 1 0 0 0 0 0
+-> 27
 
 '''
