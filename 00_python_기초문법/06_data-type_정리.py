@@ -13,8 +13,8 @@ tuple_1 = (1, 2, 3)
 string_1 = "hello"
 
 ## iterable 특성으로 인한 indexing과 loop 가능 유무
-print(f"list_1[1]: {list_1[1]}") # list   dtype은 iterable(순서가 있기) 때문에, indexing을 통해 element값을 얻을 수 있다.
-print(f"tuple_1[1]: {tuple_1[1]}") # tuple  dtype은 iterable(순서가 있기) 때문에, indexing을 통해 element값을 얻을 수 있다.
+print(f"list_1[1]: {list_1[1]}")     # list   dtype은 iterable(순서가 있기) 때문에, indexing을 통해 element값을 얻을 수 있다.
+print(f"tuple_1[1]: {tuple_1[1]}")   # tuple  dtype은 iterable(순서가 있기) 때문에, indexing을 통해 element값을 얻을 수 있다.
 print(f"string_1[1]: {string_1[1]}") # string dtype은 iterable(순서가 있기) 때문에, indexing을 통해 element값을 얻을 수 있다.
 for l in list_1:  # list   dtype은 iterable(순서가 있기) 때문에, loop 사용 가능하다.
     print(f"{l}", end=' ')

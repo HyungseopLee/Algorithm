@@ -13,6 +13,7 @@ print(a)
 n = 4
 m = 3
 map = [ [0] * m for _ in range(n)]
+# map = [ [0 * m] for _ in range(n) ] # 잘못된 방법. 전체 list 안에 포함된 각 list(row)가 모두 같은 object로 인식됨.
 print(f"map: {map}")
 
 cnt_zero = 0
