@@ -10,5 +10,5 @@ import sys
 data = sys.stdin.readline()
 print(f"data: {data}")
 
-data = sys.stdin.readline().rstrip()
+data = sys.stdin.readline().rstrip()   # strip()은 문자열의 시작과 끝에서 공백을 제거한 후 반환.
 print(f"data: {data}")

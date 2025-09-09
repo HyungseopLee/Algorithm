@@ -18,7 +18,7 @@ print(f"{flatten_matrix}")
 
 
 # 문자열 리스트가 있습니다:
-# dl 중에서 글자 수가 6 이상이고, ‘a’로 시작하는 단어만 대문자로 변환한 리스트를 만들어보세요.
+# 이 중에서 글자 수가 6 이상이고, ‘a’로 시작하는 단어만 대문자로 변환한 리스트를 만들어보세요.
 words = ["apple", "banana", "cherry", "avocado", "blueberry"]
 new_words = [ str.upper(word) for word in words if word[0]=='a' and len(word)>=6]
 print(f"new_words: {new_words}")
